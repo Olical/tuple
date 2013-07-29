@@ -1,6 +1,6 @@
 # Tuple
 
-A tiny JavaScript tuple implementation.
+A tiny JavaScript tuple implementation. This came to fruition after [a blog post I wrote][tuple-post] got a bit of attention. I felt like refining the idea and turning it into a proper project with package management, tests and documentation.
 
 ## Example
 
@@ -87,3 +87,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[tuple-post]: http://oli.me.uk/2013/07/12/tuples-in-javascript/
