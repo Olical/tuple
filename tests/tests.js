@@ -60,6 +60,15 @@
 			});
 			assert.strictEqual(result, value);
 		});
+
+		test('called with the scope of the tuple', function () {
+			var t = new Tuple();
+			var scope;
+			t.unpack(function () {
+				scope = this;
+			});
+			assert.strictEqual(scope, t);
+		});
 	});
 
 	mocha.run();

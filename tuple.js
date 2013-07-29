@@ -28,7 +28,7 @@
 	 * @return {*} The value that the unpacker function returns.
 	 */
 	Tuple.prototype.unpack = function unpack(unpacker) {
-		return unpacker.apply(null, this._values);
+		return unpacker.apply(this, this._values);
 	};
 
 	// Expose the class via AMD, CommonJS or the global object.
