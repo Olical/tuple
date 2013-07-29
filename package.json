@@ -4,6 +4,7 @@
 	"description": "A tiny tuple implementation",
 	"main": "tuple.js",
 	"directories": {
+		"test": "tests"
 	},
 	"repository": {
 		"type": "git",
