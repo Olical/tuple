@@ -96,7 +96,7 @@ Flattens the tuples values into a string.
 
 ## Tests
 
-You can execute the tests by running the local Python HTTP server (`./tools/server.sh`) and navigating to http://localhost:8000/tests/.
+You can execute the tests by running the local Python HTTP server (`./tools/server.sh`) and navigating to [http://localhost:8000/tests/][tests].
 
 ## License (MIT)
 
@@ -108,4 +108,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+[tests]: http://localhost:8000/tests/
 [tuple-post]: http://oli.me.uk/2013/07/12/tuples-in-javascript/
