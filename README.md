@@ -4,6 +4,8 @@ A tiny JavaScript tuple implementation. This came to fruition after [a blog post
 
 This version is quite different to my original implementation (which received quite a bit of critique on Hacker News). I have dropped a few things that meant it was not a real tuple, so now it's closer to the mark. I have tried to follow a KISS (Keep It Simple Stupid) mentality whilst solidifying my ideas within this repository. As a result the API and source are absolutely tiny.
 
+It can be installed through [bower][] with `bower install tuple` and [npm][] with `npm install tuple-w`. I had to add a "w" (for Wolfy87) because the name "tuple" was taken.
+
 ## Example
 
 Creating a `Tuple` instance containing some values.
@@ -108,5 +110,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[tests]: http://localhost:8000/tests/
 [tuple-post]: http://oli.me.uk/2013/07/12/tuples-in-javascript/
+[bower]: http://bower.io/
+[npm]: https://npmjs.org/
+[tests]: http://localhost:8000/tests/
