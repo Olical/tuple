@@ -2,6 +2,8 @@
 
 A tiny JavaScript tuple implementation. This came to fruition after [a blog post I wrote][tuple-post] got a bit of attention. I felt like refining the idea and turning it into a proper project with package management, tests and documentation.
 
+This version is quite different to my original implementation (which received quite a bit of critique on Hacker News). I have dropped a few things that meant it was not a real tuple, so now it's closer to the mark. I have tried to follow a KISS (Keep It Simple Stupid) mentality whilst solidifying my ideas within this repository. As a result the API and source are absolutely tiny.
+
 ## Example
 
 Creating a `Tuple` instance containing some values.
