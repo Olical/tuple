@@ -60,6 +60,18 @@ var result = numbers.unpack(add);
 result; // 30
 ```
 
+Getting a string representation of a tuple.
+
+```javascript
+var t = new Tuple('foo', 'bar');
+
+// Manual call to toString.
+t.toString(); // "(foo, bar)"
+
+// Automatic coercion too!
+'Hello! ' + t; // "Hello! (foo, bar)"
+```
+
 ## API
 
 ### Tuple
@@ -75,6 +87,12 @@ Passes the values as arguments, in the same order they were set, to the provided
 
  * *Param* {Function} **unpacker** Is passed all of the tuples values in order, it's return value will be returned.
  * *Return* {\*} The value that the unpacker function returns.
+
+### Tuple#toString
+
+Flattens the tuples values into a string.
+
+ * *Return* {String} A textual representation of the tuples contents.
 
 ## Tests
 

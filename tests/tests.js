@@ -71,5 +71,22 @@
 		});
 	});
 
+	suite('Tuple#toString', function () {
+		test('returns a string of an empty tuple', function () {
+			var t = new Tuple();
+			assert.strictEqual(t.toString(), '()');
+		});
+
+		test('returns a string of single value tuple', function () {
+			var t = new Tuple('foo');
+			assert.strictEqual(t.toString(), '(foo)');
+		});
+
+		test('returns a string of multiple value tuple', function () {
+			var t = new Tuple('foo', 'bar', 123);
+			assert.strictEqual(t.toString(), '(foo, bar, 123)');
+		});
+	});
+
 	mocha.run();
 }());

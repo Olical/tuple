@@ -31,6 +31,16 @@
 		return unpacker.apply(this, this._values);
 	};
 
+	/**
+	 * Flattens the tuples values into a string.
+	 *
+	 * @return {String} A textual representation of the tuples contents.
+	 */
+	Tuple.prototype.toString = function toString() {
+		var values = this._values.join(', ');
+		return ['(', values, ')'].join('');
+	};
+
 	// Expose the class via AMD, CommonJS or the global object.
 	if (typeof define === 'function' && define.amd) {
 		define(function () {
