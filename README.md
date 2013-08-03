@@ -6,7 +6,7 @@ This version is quite different to my original implementation (which received qu
 
 It can be installed through [bower][] with `bower install tuple` and [npm][] with `npm install tuple-w`. I had to add a "w" (for Wolfy87) because the name "tuple" was taken.
 
-## Example
+## Examples
 
 Creating a `Tuple` instance containing some values.
 
