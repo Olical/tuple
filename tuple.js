@@ -17,6 +17,13 @@
 	 */
 	function Tuple() {
 		this._values = Array.prototype.slice.call(arguments, 0);
+
+		/**
+		 * Contains the number of elements held within the tuple.
+		 *
+		 * @type {Number} The amount of elements within the tuple.
+		 */
+		this.length = this._values.length;
 	}
 
 	/**
