@@ -75,6 +75,31 @@
 		}
 	};
 
+	/**
+	 * Compares each value in both tuples, one value at a time in order. Both
+	 * tuples have to be of the same length and need to contain the exact same
+	 * values for this to return true. This can be used to compare against any
+	 * array-like object.
+	 *
+	 * @param {Object} target A tuple instance or any other array-like object you wish to compare to.
+	 * @return {Boolean} True if the tuples length and values match, false if not.
+	 */
+	Tuple.prototype.equals = function equals(target) {
+		var i = this.length;
+
+		if (i !== target.length) {
+			return false;
+		}
+
+		while (i--) {
+			if (this[i] !== target[i]) {
+				return false;
+			}
+		}
+
+		return true;
+	};
+
 	// Expose the class via AMD, CommonJS or the global object.
 	if (typeof define === 'function' && define.amd) {
 		define(function () {
