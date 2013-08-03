@@ -164,6 +164,45 @@
 		});
 	});
 
+	suite('Tuple#valueOf()', function () {
+		test('returns undefined for empty tuples', function () {
+			var t = new Tuple();
+			var value = t.valueOf();
+			assert.isUndefined(value);
+		});
+
+		test('returns the first value of a tuple if it is the only value', function () {
+			var t1 = new Tuple(10);
+			var t2 = new Tuple('foo');
+			var t3 = new Tuple('foo', 'bar');
+			var value1 = t1.valueOf();
+			var value2 = t2.valueOf();
+			var value3 = t3.valueOf();
+			assert.strictEqual(value1, 10);
+			assert.strictEqual(value2, 'foo');
+			assert.notStrictEqual(value3, 'foo');
+		});
+
+		test('returns tuple of strings concatinated', function () {
+			var t = new Tuple('foo', 'bar');
+			var value = t.valueOf();
+			assert.strictEqual(value, 'foobar');
+		});
+
+		test('returns the sum of a tuple of numbers', function () {
+			var t = new Tuple(10, 20, 30);
+			var value = t.valueOf();
+			assert.strictEqual(value, 60);
+		});
+
+		test('can use greater and less than comparisons on numerical tuples', function () {
+			var t1 = new Tuple(10, 20);
+			var t2 = new Tuple(5, 10, 20);
+			var result = t1 > t2;
+			assert.isFalse(result);
+		});
+	});
+
 	suite('Tuple#[n]', function () {
 		test('with no values it will return undefined for every index', function () {
 			var t = new Tuple();

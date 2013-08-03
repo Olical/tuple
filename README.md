@@ -132,6 +132,23 @@ t1.equals(['foo', 'bar']); // true
 t1.equals([1, 2]); // false
 ```
 
+You can perform greater or less than comparisons on tuples thanks to their `valueOf` method. This method returns the product of all values contained within the tuple added together.
+
+```javascript
+var t1 = new Tuple('foo', 'bar');
+var t2 = new Tuple(10, 20, 30);
+var t3 = new Tuple(5, 10, 20, 30);
+
+t1.valueOf(); // 'foobar'
+t2.valueOf(); // 60
+t3.valueOf(); // 65
+
+t2 > t3; // false
+t3 > t2; // true
+
+// > and < call valueOf automatically in JavaScript.
+```
+
 ## API
 
 ### Tuple
@@ -172,6 +189,14 @@ Compares each value in both tuples, one value at a time in order. Both tuples ha
 
  * *Param* {Object} target A tuple instance or any other array-like object you wish to compare to.
  * *Return* {Boolean} True if the tuples length and values match, false if not.
+
+### Tuple#valueOf()
+
+Returns the product of adding all contained values together. If you only have numbers within your tuple you will get back all of those numbers added together. If you have strings too then you will get a string containing all of the values.
+
+This function is called automatically when using greater or less than comparisons on tuples. So `tuple1 > tuple2` will add all of the containing values together and then compare them.
+
+ * *Return* {\*} The product of all values contained within the tuple.
 
 ### Tuple#[n]
 
