@@ -1,6 +1,6 @@
 {
 	"name": "tuple-w",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A tiny tuple implementation",
 	"main": "tuple.js",
 	"directories": {

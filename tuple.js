@@ -1,5 +1,5 @@
 /**
- * Tuple v1.0.0 - https://github.com/Wolfy87/tuple
+ * Tuple v1.1.0 - https://github.com/Wolfy87/tuple
  * Oliver Caldwell - http://oli.me.uk
  * MIT licence
  */
