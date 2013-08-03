@@ -21,7 +21,7 @@
 		});
 	});
 
-	suite('Tuple#unpack', function () {
+	suite('Tuple#unpack()', function () {
 		test('can unpack an empty tuple', function () {
 			var t = new Tuple();
 			var args;
@@ -71,7 +71,7 @@
 		});
 	});
 
-	suite('Tuple#toString', function () {
+	suite('Tuple#toString()', function () {
 		test('returns a string of an empty tuple', function () {
 			var t = new Tuple();
 			assert.strictEqual(t.toString(), '()');

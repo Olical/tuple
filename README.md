@@ -83,14 +83,14 @@ Simple tuple implementation. This constructor will create new instances and stor
  * *Class* Tuple A tiny tuple implementation.
  * *Param* {...\*} List of values to store within the tuple.
 
-### Tuple#unpack
+### Tuple#unpack()
 
 Passes the values as arguments, in the same order they were set, to the provided unpacker function. It will return the value that the unpacker returns.
 
  * *Param* {Function} **unpacker** Is passed all of the tuples values in order, it's return value will be returned.
  * *Return* {\*} The value that the unpacker function returns.
 
-### Tuple#toString
+### Tuple#toString()
 
 Flattens the tuples values into a string.
 
