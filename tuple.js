@@ -100,6 +100,30 @@
 		return true;
 	};
 
+	/**
+	 * Returns the product of adding all contained values together. If you only
+	 * have numbers within your tuple you will get back all of those numbers
+	 * added together. If you have strings too then you will get a string
+	 * containing all of the values.
+	 *
+	 * This function is called automatically when using greater or less than
+	 * comparisons on tuples. So `tuple1 > tuple2` will add all of the
+	 * containing values together and then compare them.
+	 *
+	 * @return {*} The product of all values contained within the tuple.
+	 */
+	Tuple.prototype.valueOf = function valueOf() {
+		var value = this[0];
+		var length = this.length;
+		var i;
+
+		for (i = 1; i < length; i += 1) {
+			value = value + this[i];
+		}
+
+		return value;
+	};
+
 	// Expose the class via AMD, CommonJS or the global object.
 	if (typeof define === 'function' && define.amd) {
 		define(function () {
