@@ -96,12 +96,15 @@ Flattens the tuples values into a string.
 
  * *Return* {String} A textual representation of the tuples contents.
 
-### Tuple#get()
+### Tuple#toArray()
 
-Fetches the value from the tuple at a specific index.
+Coerces the tuple into an array. This runs through `Array.prototype.slice.call` because tuples are array-like objects.
 
- * *Param* {Number} index Value to fetch.
- * *Return* {\*} The value at the specified index. Defaults to `undefined`.
+ * *Return* {\*[]} All of the tuples values contained within an array.
+
+### Tuple#[n]
+
+Fetches the value from the tuple at a specific index in the exact same was as an array. A tuple is an array-like object, so you can use the length and `[n]` accessors.
 
 ### Tuple#length
 

@@ -16,14 +16,16 @@
 	 * @param {...*} List of values to store within the tuple.
 	 */
 	function Tuple() {
-		this._values = Array.prototype.slice.call(arguments, 0);
-
 		/**
 		 * Contains the number of elements held within the tuple.
 		 *
 		 * @type {Number} The amount of elements within the tuple.
 		 */
-		this.length = this._values.length;
+		var i = this.length = arguments.length;
+
+		while (i--) {
+			this[i] = arguments[i];
+		}
 	}
 
 	/**
@@ -35,7 +37,7 @@
 	 * @return {*} The value that the unpacker function returns.
 	 */
 	Tuple.prototype.unpack = function unpack(unpacker) {
-		return unpacker.apply(this, this._values);
+		return unpacker.apply(this, this);
 	};
 
 	/**
@@ -44,18 +46,18 @@
 	 * @return {String} A textual representation of the tuples contents.
 	 */
 	Tuple.prototype.toString = function toString() {
-		var values = this._values.join(', ');
+		var values = this.toArray().join(', ');
 		return ['(', values, ')'].join('');
 	};
 
 	/**
-	 * Fetches the value from the tuple at a specific index.
+	 * Coerces the tuple into an array. This runs through
+	 * `Array.prototype.slice.call` because tuples are array-like objects.
 	 *
-	 * @param {Number} index Value to fetch.
-	 * @return {*} The value at the specified index. Defaults to `undefined`.
+	 * @return {*[]} All of the tuples values contained within an array.
 	 */
-	Tuple.prototype.get = function get(index) {
-		return this._values[index];
+	Tuple.prototype.toArray = function toArray() {
+		return Array.prototype.slice.call(this);
 	};
 
 	// Expose the class via AMD, CommonJS or the global object.
