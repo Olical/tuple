@@ -96,6 +96,13 @@ Flattens the tuples values into a string.
 
  * *Return* {String} A textual representation of the tuples contents.
 
+### Tuple#get()
+
+Fetches the value from the tuple at a specific index.
+
+ * *Param* {Number} index Value to fetch.
+ * *Return* {\*} The value at the specified index. Defaults to `undefined`.
+
 ### Tuple#length
 
 Contains the number of elements held within the tuple.

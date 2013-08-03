@@ -88,6 +88,39 @@
 		});
 	});
 
+	suite('Tuple#get()', function () {
+		test('with no values it will return undefined for every index', function () {
+			var t = new Tuple();
+			assert.isUndefined(t.get(0));
+			assert.isUndefined(t.get(1));
+			assert.isUndefined(t.get(2));
+		});
+
+		test('requesting -1 is undefined', function () {
+			var t = new Tuple();
+			assert.isUndefined(t.get(-1));
+		});
+
+		test('with one value it will return that value when the first is requested', function () {
+			var value = 'foo';
+			var t = new Tuple(value);
+			assert.strictEqual(t.get(0), value);
+			assert.isUndefined(t.get(1));
+			assert.isUndefined(t.get(2));
+		});
+
+		test('with multiple values it will return the correct values at the specified indexes', function () {
+			var first = 'foo';
+			var second = 'bar';
+			var t = new Tuple(first, second);
+			assert.isUndefined(t.get(-1));
+			assert.strictEqual(t.get(0), first);
+			assert.strictEqual(t.get(1), second);
+			assert.isUndefined(t.get(2));
+			assert.isUndefined(t.get(3));
+		});
+	});
+
 	suite('Tuple#length', function () {
 		test('is equal to 0 when there are no elements', function () {
 			var t = new Tuple();
