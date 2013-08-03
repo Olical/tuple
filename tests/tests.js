@@ -21,7 +21,7 @@
 		});
 	});
 
-	suite('Tuple#unpack', function () {
+	suite('Tuple#unpack()', function () {
 		test('can unpack an empty tuple', function () {
 			var t = new Tuple();
 			var args;
@@ -71,7 +71,7 @@
 		});
 	});
 
-	suite('Tuple#toString', function () {
+	suite('Tuple#toString()', function () {
 		test('returns a string of an empty tuple', function () {
 			var t = new Tuple();
 			assert.strictEqual(t.toString(), '()');
@@ -85,6 +85,23 @@
 		test('returns a string of multiple value tuple', function () {
 			var t = new Tuple('foo', 'bar', 123);
 			assert.strictEqual(t.toString(), '(foo, bar, 123)');
+		});
+	});
+
+	suite('Tuple#length', function () {
+		test('is equal to 0 when there are no elements', function () {
+			var t = new Tuple();
+			assert.lengthOf(t, 0);
+		});
+
+		test('is equal to 1 when there is one element', function () {
+			var t = new Tuple('foo');
+			assert.lengthOf(t, 1);
+		});
+
+		test('is equal to 3 when there are two elements', function () {
+			var t = new Tuple('foo', 'bar', 'baz');
+			assert.lengthOf(t, 3);
 		});
 	});
 
