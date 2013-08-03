@@ -88,5 +88,22 @@
 		});
 	});
 
+	suite('Tuple#length', function () {
+		test('is equal to 0 when there are no elements', function () {
+			var t = new Tuple();
+			assert.lengthOf(t, 0);
+		});
+
+		test('is equal to 1 when there is one element', function () {
+			var t = new Tuple('foo');
+			assert.lengthOf(t, 1);
+		});
+
+		test('is equal to 3 when there are two elements', function () {
+			var t = new Tuple('foo', 'bar', 'baz');
+			assert.lengthOf(t, 3);
+		});
+	});
+
 	mocha.run();
 }());

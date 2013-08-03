@@ -96,6 +96,12 @@ Flattens the tuples values into a string.
 
  * *Return* {String} A textual representation of the tuples contents.
 
+### Tuple#length
+
+Contains the number of elements held within the tuple.
+
+ * *Type* {Number} The amount of elements within the tuple.
+
 ## Tests
 
 You can execute the tests by running the local Python HTTP server (`./tools/server.sh`) and navigating to [http://localhost:8000/tests/][tests].
