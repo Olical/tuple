@@ -107,7 +107,7 @@
 	suite('Tuple#forEach()', function () {
 		test('will not do anything with an empty tuple', function () {
 			var values = [];
-			var t = Tuple();
+			var t = new Tuple();
 			t.forEach(function (value) {
 				values.push(value);
 			});
@@ -119,7 +119,7 @@
 			var values = [];
 			var first = 'foo';
 			var second = 'bar';
-			var t = Tuple(first, second);
+			var t = new Tuple(first, second);
 			t.forEach(function (value) {
 				values.push(value);
 			});
