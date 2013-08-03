@@ -48,6 +48,16 @@
 		return ['(', values, ')'].join('');
 	};
 
+	/**
+	 * Fetches the value from the tuple at a specific index.
+	 *
+	 * @param {Number} index Value to fetch.
+	 * @return {*} The value at the specified index. Defaults to `undefined`.
+	 */
+	Tuple.prototype.get = function get(index) {
+		return this._values[index];
+	};
+
 	// Expose the class via AMD, CommonJS or the global object.
 	if (typeof define === 'function' && define.amd) {
 		define(function () {
