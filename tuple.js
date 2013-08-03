@@ -60,6 +60,21 @@
 		return Array.prototype.slice.call(this);
 	};
 
+	/**
+	 * Iterates over every value within the tuple and pass the said values to
+	 * the provided callback individually.
+	 *
+	 * @param {Function} callback Is passed every value in the tuple, one at a time.
+	 */
+	Tuple.prototype.forEach = function forEach(callback) {
+		var length = this.length;
+		var i;
+
+		for (i = 0; i < length; i += 1) {
+			callback(this[i]);
+		}
+	};
+
 	// Expose the class via AMD, CommonJS or the global object.
 	if (typeof define === 'function' && define.amd) {
 		define(function () {
