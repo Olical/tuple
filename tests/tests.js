@@ -128,6 +128,42 @@
 		});
 	});
 
+	suite('Tuple#equals()', function () {
+		test('comparing two empty tuples passes', function () {
+			var t1 = new Tuple();
+			var t2 = new Tuple();
+			var result = t1.equals(t2);
+			assert.isTrue(result);
+		});
+
+		test('comparing an empty and populated tuple does not pass', function () {
+			var t1 = new Tuple();
+			var t2 = new Tuple('foo');
+			var result = t1.equals(t2);
+			assert.isFalse(result);
+		});
+
+		test('comparing two identical populated tuples passes', function () {
+			var t1 = new Tuple('foo', 'bar');
+			var t2 = new Tuple('foo', 'bar');
+			var result = t1.equals(t2);
+			assert.isTrue(result);
+		});
+
+		test('comparing two different populated tuples does not pass', function () {
+			var t1 = new Tuple('foo', 'baz', 'bar');
+			var t2 = new Tuple('foo', 'bar');
+			var result = t1.equals(t2);
+			assert.isFalse(result);
+		});
+
+		test('comparing array like objects works as expected', function () {
+			var t1 = new Tuple('foo', 'bar');
+			assert.isTrue(t1.equals(['foo', 'bar']));
+			assert.isFalse(t1.equals(['foo', 'bar', 'baz']));
+		});
+	});
+
 	suite('Tuple#[n]', function () {
 		test('with no values it will return undefined for every index', function () {
 			var t = new Tuple();

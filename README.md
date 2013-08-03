@@ -115,6 +115,23 @@ t.forEach(function (value) {
 // log: 30
 ```
 
+You need not iterate over the tuple to compare values though, you can use the `equals` method for that.
+
+```javascript
+var t1 = new Tuple('foo', 'bar');
+var t2 = new Tuple('foo', 'bar');
+var t3 = new Tuple('foo', 'bar', 'baz');
+
+t1.equals(t2); // true
+t2.equals(t1); // true
+t1.equals(t3); // false
+t3.equals(t2); // false
+
+// Or compare to any other array-like object!
+t1.equals(['foo', 'bar']); // true
+t1.equals([1, 2]); // false
+```
+
 ## API
 
 ### Tuple
@@ -148,6 +165,13 @@ Coerces the tuple into an array. This runs through `Array.prototype.slice.call` 
 Iterates over every value within the tuple and pass the said values to the provided callback individually.
 
  * *Param* {Function} callback Is passed every value in the tuple, one at a time.
+
+### Tuple#equals()
+
+Compares each value in both tuples, one value at a time in order. Both tuples have to be of the same length and need to contain the exact same values for this to return true. This can be used to compare against any array-like object.
+
+ * *Param* {Object} target A tuple instance or any other array-like object you wish to compare to.
+ * *Return* {Boolean} True if the tuples length and values match, false if not.
 
 ### Tuple#[n]
 
