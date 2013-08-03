@@ -90,6 +90,17 @@ for (i = 0; i < t.length; t += 1) {
 console.log(t.toArray().join('-')); // 'foo-bar'
 ```
 
+Because it's array-like, you can even do crazy stuff like this.
+
+```javascript
+var t = new Tuple('Hello, World!');
+console.log.apply(null, t);
+
+// log: 'Hello, World!'
+```
+
+The browser has automatically converted the tuple to an array and applied it to the `log` method!
+
 ## API
 
 ### Tuple
