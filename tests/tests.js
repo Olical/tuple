@@ -104,6 +104,30 @@
 		});
 	});
 
+	suite('Tuple#forEach()', function () {
+		test('will not do anything with an empty tuple', function () {
+			var values = [];
+			var t = Tuple();
+			t.forEach(function (value) {
+				values.push(value);
+			});
+			assert.lengthOf(values, 0);
+			assert.deepEqual(values, []);
+		});
+
+		test('will iterate over every value in a tuple', function () {
+			var values = [];
+			var first = 'foo';
+			var second = 'bar';
+			var t = Tuple(first, second);
+			t.forEach(function (value) {
+				values.push(value);
+			});
+			assert.lengthOf(values, 2);
+			assert.deepEqual(values, [first, second]);
+		});
+	});
+
 	suite('Tuple#[n]', function () {
 		test('with no values it will return undefined for every index', function () {
 			var t = new Tuple();

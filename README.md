@@ -101,6 +101,20 @@ console.log.apply(null, t);
 
 The browser has automatically converted the tuple to an array and applied it to the `log` method!
 
+You can also iterate over the tuple using the `forEach` method if you don't want to touch the array-like properties.
+
+```javascript
+var t = new Tuple(10, 20, 30);
+
+t.forEach(function (value) {
+	console.log(value);
+});
+
+// log: 10
+// log: 20
+// log: 30
+```
+
 ## API
 
 ### Tuple
@@ -128,6 +142,12 @@ Flattens the tuples values into a string.
 Coerces the tuple into an array. This runs through `Array.prototype.slice.call` because tuples are array-like objects.
 
  * *Return* {\*[]} All of the tuples values contained within an array.
+
+### Tuple#forEach()
+
+Iterates over every value within the tuple and pass the said values to the provided callback individually.
+
+ * *Param* {Function} callback Is passed every value in the tuple, one at a time.
 
 ### Tuple#[n]
 
