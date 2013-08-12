@@ -64,6 +64,10 @@
 	 * Iterates over every value within the tuple and pass the said values to
 	 * the provided callback individually.
 	 *
+	 * The callback is also passed the current index and tuple instance in that
+	 * order. This matches the normal `forEach` API found in most libraries and
+	 * modern JavaScript.
+	 *
 	 * @param {Function} callback Is passed every value in the tuple, one at a time.
 	 */
 	Tuple.prototype.forEach = function forEach(callback) {
