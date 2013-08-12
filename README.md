@@ -106,7 +106,7 @@ You can also iterate over the tuple using the `forEach` method if you don't want
 ```javascript
 var t = new Tuple(10, 20, 30);
 
-t.forEach(function (value) {
+t.forEach(function (value, index, scope) {
 	console.log(value);
 });
 
@@ -180,6 +180,8 @@ Coerces the tuple into an array. This runs through `Array.prototype.slice.call` 
 ### Tuple#forEach()
 
 Iterates over every value within the tuple and pass the said values to the provided callback individually.
+
+The callback is also passed the current index and tuple instance in that order. This matches the normal `forEach` API found in most libraries and modern JavaScript.
 
  * *Param* {Function} callback Is passed every value in the tuple, one at a time.
 

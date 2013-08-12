@@ -1,5 +1,5 @@
 /**
- * Tuple v1.1.0 - https://github.com/Wolfy87/tuple
+ * Tuple v1.1.1 - https://github.com/Wolfy87/tuple
  * Oliver Caldwell - http://oli.me.uk
  * MIT licence
  */
@@ -64,6 +64,10 @@
 	 * Iterates over every value within the tuple and pass the said values to
 	 * the provided callback individually.
 	 *
+	 * The callback is also passed the current index and tuple instance in that
+	 * order. This matches the normal `forEach` API found in most libraries and
+	 * modern JavaScript.
+	 *
 	 * @param {Function} callback Is passed every value in the tuple, one at a time.
 	 */
 	Tuple.prototype.forEach = function forEach(callback) {
@@ -71,7 +75,7 @@
 		var i;
 
 		for (i = 0; i < length; i += 1) {
-			callback(this[i]);
+			callback(this[i], i, this);
 		}
 	};
 
