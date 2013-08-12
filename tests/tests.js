@@ -126,6 +126,24 @@
 			assert.lengthOf(values, 2);
 			assert.deepEqual(values, [first, second]);
 		});
+
+		test('the current index is passed', function () {
+			var indexes = [];
+			var t = new Tuple('foo', 'bar', 'baz');
+			t.forEach(function (value, index) {
+				indexes.push(index);
+			});
+			assert.deepEqual(indexes, [0, 1, 2]);
+		});
+
+		test('the current "this" scope is passed', function () {
+			var passedScope;
+			var t = new Tuple('foo');
+			t.forEach(function (value, index, scope) {
+				passedScope = scope;
+			});
+			assert.strictEqual(passedScope, t);
+		});
 	});
 
 	suite('Tuple#equals()', function () {
