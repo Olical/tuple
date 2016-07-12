@@ -80,7 +80,7 @@ Tuples are array-like objects, that means you can treat them like arrays and it 
 var t = new Tuple('foo', 'bar');
 var i;
 
-for (i = 0; i < t.length; t += 1) {
+for (i = 0; i < t.length; i += 1) {
 	console.log(t[i]);
 }
 
